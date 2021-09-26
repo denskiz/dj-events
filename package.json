@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "start": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start1": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "cookie": "^0.4.1",
+    "moment": "^2.29.1",
     "next": "11.1.2",
+    "qs": "^6.10.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-toastify": "^8.0.3"
   },
   "devDependencies": {
     "@types/react": "17.0.24",

@@ -128,7 +128,7 @@ export default function EditEventPage({ evt, token }) {
               name="date"
               id="date"
               // value={moment(values.date).format('yyyy-MM-DD')}
-              value={date}
+              value={values.date}
               onChange={handleInputChange}
             />
           </div>

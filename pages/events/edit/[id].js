@@ -1,4 +1,3 @@
-import moment from 'moment';
 import { FaImage } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,13 +12,18 @@ import ImageUpload from '@/components/ImageUpload';
 import { API_URL } from '@/config/index';
 import styles from '@/styles/Form.module.css';
 
+function formatDateForInput(date) {
+  const formatted = new Date(date).toISOString().slice(0, 10);
+  return formatted;
+}
+
 export default function EditEventPage({ evt, token }) {
   const [values, setValues] = useState({
     name: evt.name,
     performers: evt.performers,
     venue: evt.venue,
     address: evt.address,
-    date: evt.date,
+    date: formatDateForInput(evt.date),
     time: evt.time,
     description: evt.description,
   });
@@ -128,7 +132,8 @@ export default function EditEventPage({ evt, token }) {
               type="date"
               name="date"
               id="date"
-              value={moment(values.date).format('yyyy-MM-DD')}
+              // value={moment(values.date).format('yyyy-MM-DD')}
+              value={date}
               onChange={handleInputChange}
             />
           </div>

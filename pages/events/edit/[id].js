@@ -12,18 +12,13 @@ import ImageUpload from '@/components/ImageUpload';
 import { API_URL } from '@/config/index';
 import styles from '@/styles/Form.module.css';
 
-function formatDateForInput(date) {
-  const formatted = new Date(date).toISOString().slice(0, 10);
-  return formatted;
-}
-
 export default function EditEventPage({ evt, token }) {
   const [values, setValues] = useState({
     name: evt.name,
     performers: evt.performers,
     venue: evt.venue,
     address: evt.address,
-    date: formatDateForInput(evt.date),
+    date: evt.date.split('T')[0],
     time: evt.time,
     description: evt.description,
   });
